@@ -1,0 +1,15 @@
+[Unit]
+Description=hello world node js app 
+After=network.target
+StartLimitIntervalSec=70
+StartLimitBurst=5
+
+[Service]
+ExecStart=/usr/bin/nodejs /home/ubuntu/nodejs-helloworld/http_server.js
+Restart=always
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu
+
+[Install]
+WantedBy=multi-user.target
